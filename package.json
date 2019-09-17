@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose",
-    "start": "node index.js"
+    "start": "npm start"
   },
   "engines": {
     "node": "8.9.4"
