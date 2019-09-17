@@ -8,7 +8,7 @@ require("./startup/prod")(app);
 
 app.use(passport.initialize());
 app.use(morgan("tiny"));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 require("./startup/logging")();
 require("./startup/config")();
