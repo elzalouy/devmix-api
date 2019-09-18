@@ -1,7 +1,6 @@
 {
     "jwt_PK": "jwt_PK",
     "connectionString": "connectionString",
-    "name": "name",
     "googleplus-clientId": "googleplus_clientId",
     "googleplus-clientSecret": "googleplus_clientSecret"
 }
