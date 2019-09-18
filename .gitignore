@@ -3,4 +3,5 @@ sprint1.pdf
 Devmix API.gif
 server.crt
 server.csr
-server.key
+server.keynode_modules
+node_modules
