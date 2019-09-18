@@ -7,7 +7,7 @@ const passport = require("passport");
 
 app.use(passport.initialize());
 app.use(morgan("tiny"));
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended=false}));
 app.use(express.json());
 require("./startup/prod")(app);
 require("./startup/logging")();
