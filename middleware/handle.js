@@ -1,4 +1,5 @@
 const error = require("./error");
+const winston = require("winston");
 module.exports = function(handler) {
   return async (req, res, next) => {
     try {
