@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 1024
   },
-  gender: { type: ["male" || "female"], required: true },
+  gender: { type: String, required: true },
   isAdmin: { type: Boolean },
   short_desc: { type: String, required: true, minlength: 5, maxlength: 128 },
   long_desc: { type: String, required: true, minlength: 20, maxlength: 1028 },
@@ -59,7 +59,7 @@ function validateUser(user) {
       .min(5)
       .max(255)
       .required(),
-    gender: "male" || "female",
+    gender: Joi.string().required(),
     short_desc: Joi.string()
       .min(5)
       .max(128)

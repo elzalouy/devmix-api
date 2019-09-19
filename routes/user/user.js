@@ -22,7 +22,9 @@ router.post(
       email: req.body.email,
       password: await bcrypt.hash(req.body.password, salt),
       isAdmin: false,
-      gender: req.body.gender
+      gender: req.body.gender,
+      short_desc: req.body.short_desc,
+      long_desc: req.body.long_desc
     });
     user = await user.save();
     const token = user.generateAuthToken();
