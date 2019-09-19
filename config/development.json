@@ -1,5 +1,4 @@
 {
     "name": "Devmix Api development",
-    "callbackURL": "http://localhost:3000/api/auth/google/redirect",
-    "connectionString": "mongodb://localhost:27017/devmix"
+    "callbackURL": "http://localhost:3000/api/auth/google/redirect"
 }
