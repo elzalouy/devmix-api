@@ -1,6 +1,5 @@
 const express = require("express");
 const validatObjeectId = require("../../middleware/validateObjectId");
-const mongoose = require("mongoose");
 const Router = express.Router();
 const {
   event,
@@ -10,12 +9,19 @@ const {
 const auth = require("../../middleware/auth");
 const admin = require("../../middleware/admin");
 const handle = require("../../middleware/handle");
-
+const { Attendees } = require("../../models/attendees");
+const upload = require("../../services/uploading")();
+const _ = require("lodash");
+const {
+  uploadImage,
+  deleteImage,
+  deletePublic
+} = require("../../services/cloudinary");
 //Get the events
 Router.get(
   "/",
   handle(async (req, res) => {
-    const events = await event.find().sort("date");
+    let events = await event.find().sort("date");
     if (!events)
       res.status(400).send("there are no events existed in the database.");
     res.send(events);
@@ -24,24 +30,16 @@ Router.get(
 
 //get an event with id
 Router.get(
-  "/:id",
+  "/get/:id",
   validatObjeectId,
   handle(async (req, res) => {
     const eventrow = await event.findById(req.params.id);
     if (!eventrow)
       return res.status(400).send("the event with the given id was not found");
+    const Event = _.pick(eventrow, [
+      "name cover_photo.url location date feedbacks sessions facebook_link twitter_link users"
+    ]);
     res.send(eventrow);
-  })
-);
-
-//Get upcoming events
-Router.get(
-  "/all/upcoming",
-  handle(async (req, res) => {
-    const events = await event.find({ date: { $gte: Date.now() } });
-    if (!events)
-      return res.status(200).send("there is no upcoming events until now");
-    res.send(events);
   })
 );
 
@@ -50,10 +48,18 @@ Router.post(
   "/",
   [auth, admin],
   handle(async (req, res) => {
+    const obj = await event.findOne({ name: req.body.name });
+    if (obj)
+      return res
+        .status(400)
+        .send(
+          "There are an event with the same name. Please choose another name."
+        );
     const { error } = validateEvent(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     const { error: sessionError } = validateSessions(req.body.sessions[0]);
-    if (sessionError) return res.status(400).send(Serror.details[0].message);
+    if (sessionError)
+      return res.status(400).send(sessionError.details[0].message);
     let Element;
     req.body.sessions.forEach(element => {
       const { error } = validateSessions(element);
@@ -64,57 +70,80 @@ Router.post(
     if (Element) return res.status(400).send(Element.message);
     const newEvent = new event({
       name: req.body.name,
-      cover_photo: req.body.cover_photo,
-      description: req.body.description,
       date: req.body.date,
-      feedback: req.body.feedback,
-      sessions: req.body.sessions
+      feedbacks: req.body.feedbacks,
+      sessions: req.body.sessions,
+      cover_photo: req.body.cover_photo,
+      location: req.body.location,
+      twitter_link: req.body.twitter_link,
+      facebook_link: req.body.facebook_link,
+      users: 0
     });
     const result = await newEvent.save();
-    res.send(result);
+    res.status(200).send(result._id);
+  })
+);
+
+Router.post(
+  "/image",
+  [auth, admin],
+  upload.single("cover_photo"),
+  handle(async (req, res) => {
+    const id = req.body.id;
+    const Event = await event.findById(id);
+    if (Event && Event.cover_photo) deleteImage(Event.cover_photo.public_id);
+    if (!Event)
+      return res.status(400).send("there are error while saving the event...");
+    const path = "./" + req.file.path;
+    const result = await uploadImage(path);
+    if (result) {
+      Event.cover_photo = result;
+      await Event.save();
+    }
+    deletePublic();
+    res.status(200).send("done");
   })
 );
 
 //update an event
 Router.put(
-  "/:id",
+  "/update/:id",
   [auth, admin],
   validatObjeectId,
   handle(async (req, res, next) => {
+    const sessions = _.map(req.body.sessions, element => {
+      return _.omit(element, "_id");
+    });
     //validate
-    const { error } = validateEvent(req.body);
+    const data = {
+      name: req.body.name,
+      date: req.body.date,
+      sessions: sessions,
+      location: req.body.location,
+      twitter_link: req.body.twitter_link,
+      facebook_link: req.body.facebook_link
+    };
+    const { error } = validateEvent(data);
     if (error) return res.status(400).send(error.details[0].message);
     const Event = await event.findById(req.params.id);
     if (!Event)
       return res.status(400).send("the event with the given id was not found");
     let Element;
-    req.body.sessions.forEach(element => {
+    data.sessions.forEach(element => {
       const { error } = validateSessions(element);
       if (error) {
         Element = error;
       }
     });
     if (Element) return res.status(400).send(Element.message);
-    const updateEvent = await event.findByIdAndUpdate(
-      req.params.id,
-      {
-        name: req.body.name,
-        cover_photo: req.body.cover_photo,
-        description: req.body.description,
-        date: req.body.date,
-        feedback: req.body.feedback,
-        sessions: req.body.sessions
-      },
-      {
-        new: true
-      }
-    );
+    const updateEvent = await event.findByIdAndUpdate(req.params.id, data, {
+      new: true
+    });
     if (!updateEvent)
       return res.status(400).send("the event with the given id was not found");
     res.send(updateEvent);
   })
 );
-
 //delete event
 Router.delete(
   "/:id",
@@ -122,6 +151,8 @@ Router.delete(
   validatObjeectId,
   handle(async (req, res, next) => {
     const result = await event.findByIdAndRemove(req.params.id);
+    if (!result.errors) deleteImage(result.cover_photo.public_id);
+    await Attendees.remove({ event: req.params.id });
     if (!result)
       return res.status(400).send("the event with the given id was not found");
     res.send(result);

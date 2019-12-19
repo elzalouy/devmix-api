@@ -5,7 +5,8 @@ module.exports = function() {
   if (
     !config.has("jwt_PK") ||
     !config.has("connectionString") ||
-    !config.has("name")
+    !config.has("name") ||
+    !config.has("CLOUDINARY_URL")
   ) {
     console.log(
       "FATAL ERROR: you must set the environment variables that are related to the configuration file."

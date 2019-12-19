@@ -5,8 +5,9 @@ module.exports = function(handler) {
     try {
       await handler(req, res);
     } catch (err) {
-      winston.error(err.message, err);
       console.log(err);
+      if (err.code === 11000) res.status(400).send("duplicated name");
+      winston.error(err.message, err);
       res.status(500).send(err.message);
     }
   };

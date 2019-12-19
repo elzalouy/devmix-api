@@ -1,20 +1,24 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
-const debug = require("debug")("app:startup");
-const sessionSchema = mongoose.Schema({
+const sessionSchema = new mongoose.Schema({
   session_name: {
     type: String,
     required: true,
-    minlength: 3,
-    maxlength: 128,
+    min: 3,
+    max: 128,
     lowercase: true
   },
   session_number: { type: Number, required: true },
-  content_desc: { type: String, required: true, minlength: 5, maxlength: 2048 },
+  date: { type: String, required: true },
+  time: { type: String, required: true },
+  content_desc: { type: String, required: true, min: 5, max: 1028 },
   content_link: String,
-  instructor_id: Number
+  instructor_id: { type: String, required: true }
 });
-
+const feedback = {
+  user_id: { type: String, required: true },
+  feedback: { type: String, required: true }
+};
 const event = mongoose.model(
   "event",
   new mongoose.Schema({
@@ -27,73 +31,72 @@ const event = mongoose.model(
       unique: true
     },
     cover_photo: {
-      type: String,
-      required: true,
-      minlength: 5,
-      maxlength: 2048
+      type: Object
     },
-    description: {
-      type: String,
-      required: true,
-      minlength: 10,
-      maxlength: 2048
-    },
+    location: { type: String, min: 3, max: 128, required: true },
     date: {
       type: Date,
       required: true
     },
-    feedback: {
-      type: Array,
-      required: false
+    feedbacks: {
+      type: [feedback]
     },
     sessions: {
       type: [sessionSchema],
       required: true,
       minlength: 1,
       maxlength: 128
-    }
+    },
+    facebook_link: { type: String },
+    twitter_link: { type: String },
+    users: { type: Number }
   })
 );
 
 function validateEvent(event) {
   const eventJoiSchema = {
+    _id: Joi.object(),
     name: Joi.string()
       .min(3)
       .max(128)
       .required(),
-    cover_photo: Joi.string()
-      .min(5)
-      .max(2048)
-      .required(),
-    description: Joi.string()
-      .required()
-      .min(10)
-      .max(2048),
+    cover_photo: Joi.object(),
     date: Joi.date().required(),
-    feedback: Joi.array(),
+    feedbacks: Joi.array(),
     sessions: Joi.array()
       .required()
       .required()
       .min(1)
+      .max(128),
+    location: Joi.string()
+      .min(3)
       .max(128)
+      .required(),
+    facebook_link: Joi.string(),
+    twitter_link: Joi.string(),
+    users: Joi.number()
   };
   return Joi.validate(event, eventJoiSchema);
 }
 
 function validateSessions(session) {
   const sessionJoiSchema = {
+    _id: Joi.object(),
     session_name: Joi.string()
       .min(3)
       .max(128)
       .lowercase()
       .required(),
-    instructor_id: Joi.number(),
+    instructor_id: Joi.string().required(),
     session_number: Joi.number().required(),
+    date: Joi.string().required(),
     content_desc: Joi.string()
       .min(5)
       .max(2048)
       .required(),
-    content_link: Joi.string()
+    content_link: Joi.string(),
+    date: Joi.string().required(),
+    time: Joi.string().required()
   };
   return Joi.validate(session, sessionJoiSchema);
 }

@@ -1,11 +1,15 @@
 const express = require("express");
 const validatObjeectId = require("../../middleware/validateObjectId");
 const Router = express.Router();
-const { event, validateEvent, validateSessions } = require("../../models/event");
+const {
+  event,
+  validateEvent,
+  validateSessions
+} = require("../../models/event");
 const auth = require("../../middleware/auth");
 const admin = require("../../middleware/admin");
 const handle = require("../../middleware/handle");
-const mongoose=require('mongoose');
+const _ = require("lodash");
 //get an event sessions by id
 Router.get(
   "/:id",
@@ -33,6 +37,22 @@ Router.post(
     const result = await evnt.save();
     if (!result) return res.status(400).send("error while saving the document");
     res.send({ "sessions number": number, result: result });
+  })
+);
+Router.delete(
+  "/:id/:session_id",
+  [auth, admin],
+  validatObjeectId,
+  handle(async (req, res) => {
+    console.log(req.params.session_id);
+    const Event = await event.findById(req.params.id);
+    let sessions = _.filter(
+      Event.sessions,
+      s => s.id !== req.params.session_id
+    );
+    Event.sessions = sessions;
+    await Event.save();
+    res.send("the session deleted successfuly.");
   })
 );
 

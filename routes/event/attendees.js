@@ -12,16 +12,21 @@ const _ = require("lodash");
 
 // get event attendees
 router.get(
-  "/event/:id",
+  "/getEventAttendees/:id",
   validateObjectId,
   handle(async (req, res) => {
+    const Event = await event.findById(req.params.id);
+    if (!Event)
+      return res.status(400).send("the event with the given id was found");
     const attendees = await Attendees.find({ event: req.params.id });
-    if (!attendees)
-      return res.status(400).send("the event with the given id was not found");
+    if (attendees.length === 0)
+      return res.status(200).send("there are no attendees until now");
+    Event.users = attendees.length;
+    await Event.save();
     let users = { users: [] };
     for (i = 0; i < attendees.length; i++) {
       let user = await User.findById(attendees[i].user).select(
-        "name , email , profile_photo"
+        "name , profile_photo, short_desc"
       );
       users["users"].push(user);
     }
@@ -29,9 +34,21 @@ router.get(
   })
 );
 
-// user events to attend
 router.get(
-  "/user/events",
+  "/getUserAttendee/:event_id",
+  validateObjectId,
+  auth,
+  handle(async (req, res) => {
+    const attendee = await Attendees.findOne({
+      event: req.params.event_id,
+      user: req.user._id
+    });
+    res.status(200).send(attendee);
+  })
+);
+// user's events to attend
+router.get(
+  "/getUserAttendees",
   auth,
   handle(async (req, res) => {
     const attendees = await Attendees.find({
@@ -51,7 +68,7 @@ router.get(
 
 //promise to attent an event
 router.get(
-  "/:id",
+  "/attendEvent/:id",
   validateObjectId,
   auth,
   handle(async (req, res) => {
@@ -63,24 +80,20 @@ router.get(
       event: req.params.id
     });
     if (attendee) return res.status(200).send("the attendee aleardy existed");
-    attendee = await Attendees.findOne({
-      user_id: req.user._id,
-      event_id: req.params.id
-    });
     let newattendee = new Attendees({
       user: req.user._id,
       event: req.params.id,
       confirm: false
     });
     newattendee = await newattendee.save();
-    Event = await event.findById(req.params.id).select("name");
+    Event = _.pick(Event, ["name", "cover_photo"]);
     res.status(200).send(Event);
   })
 );
 
 //will not attend an event
 router.get(
-  "/not/:id",
+  "/notAttend/:id",
   validateObjectId,
   auth,
   handle(async (req, res) => {
@@ -111,5 +124,5 @@ router.post(
     return res.send(attendee);
   })
 );
-
+//get confirmed attendees
 module.exports = router;

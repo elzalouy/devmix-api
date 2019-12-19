@@ -7,13 +7,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 2,
-    maxlength: 50
+    maxlength: 64
   },
   email: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 255,
+    minlength: 8,
+    maxlength: 256,
     unique: true
   },
   password: {
@@ -24,10 +24,13 @@ const userSchema = new mongoose.Schema({
   },
   gender: { type: String, required: true },
   isAdmin: { type: Boolean },
-  short_desc: { type: String, required: true, minlength: 5, maxlength: 128 },
-  long_desc: { type: String, required: true, minlength: 20, maxlength: 1028 },
-  cover_photo: { type: String },
-  profile_photo: { type: String }
+  short_desc: { type: String, minlength: 5, maxlength: 128 },
+  long_desc: { type: String, minlength: 20, maxlength: 1028 },
+  profile_photo: { type: String },
+  linknedIn: { type: String },
+  twitter: String,
+  github: String,
+  job: String
 });
 
 userSchema.methods.generateAuthToken = function() {
@@ -38,7 +41,10 @@ userSchema.methods.generateAuthToken = function() {
       email: this.email,
       isAdmin: this.isAdmin
     },
-    config.get("jwt_PK")
+    config.get("jwt_PK"),
+    {
+      expiresIn: "48h"
+    }
   );
   return token;
 };
@@ -62,14 +68,15 @@ function validateUser(user) {
     gender: Joi.string().required(),
     short_desc: Joi.string()
       .min(5)
-      .max(128)
-      .required(),
+      .max(128),
     long_desc: Joi.string()
       .min(20)
-      .max(1028)
-      .required(),
-    cover_photo: Joi.string(),
-    profile_photo: Joi.string()
+      .max(1028),
+    profile_photo: Joi.string(),
+    linknedIn: Joi.string(),
+    twitter: Joi.string(),
+    github: Joi.string(),
+    job: Joi.string()
   };
   return Joi.validate(user, schema);
 }

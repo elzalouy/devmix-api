@@ -1,10 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const winston = require("winston");
 const morgan = require("morgan");
 const config = require("config");
 const app = express();
 const passport = require("passport");
-
+app.use(cors());
 app.use(passport.initialize());
 app.use(morgan("tiny"));
 app.use(express.urlencoded({ extended: true }));
@@ -14,7 +15,6 @@ require("./startup/logging")();
 require("./startup/config")();
 require("./startup/db")();
 require("./startup/routes")(app);
-
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   try {
