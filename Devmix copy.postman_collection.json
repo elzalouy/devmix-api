@@ -1,0 +1,933 @@
+{
+	"id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+	"name": "Devmix copy",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "Ask",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"order": [
+				"662a343d-3cfc-8f3a-2218-cf5641062f17",
+				"663c4dde-d74d-3a65-369a-7674570ee611",
+				"89d11fe3-f39a-a637-e01e-3ba38763934a",
+				"67b48bd5-2fff-c072-1037-b4d2a3579643",
+				"1a4ac95e-0079-5682-bac5-bf16378f04ec",
+				"28bd946e-9def-7c58-2f2a-d4c479c5e178",
+				"b6152fe0-1c29-8bc0-5df7-9bce48100f34"
+			],
+			"owner": "6307338",
+			"folders_order": [],
+			"id": "b954132e-0c40-6e7a-e333-07f62ebde406"
+		},
+		{
+			"name": "Events",
+			"description": "Events api is the main feature that devmix should have at the current state.",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"order": [
+				"8fef66f3-e922-8f28-1511-5330bcedfec0",
+				"f12b4b41-2ca6-9a2b-9b1f-43eb16c2285b",
+				"75cc1c91-97de-0f43-23ef-1448c23f48f4",
+				"455d0611-3502-8577-f907-f7d3b94bb098",
+				"67130b04-da1c-732b-43c1-a45b53775316",
+				"c3b429d3-f3b3-b1a9-84be-00e7289ca435"
+			],
+			"owner": "6307338",
+			"folders_order": [],
+			"id": "83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d"
+		},
+		{
+			"name": "Sessions",
+			"description": "The sessions are the sub-api from events api, every event have many several sessions.",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"order": [
+				"7f3709b4-326d-f92a-3093-69f853d86e77",
+				"723c45a6-1bf2-c665-828b-8f961be7ee8c",
+				"9257cae2-0c5a-43c5-a68d-9c76d0b78ee1"
+			],
+			"owner": "6307338",
+			"folders_order": [],
+			"id": "03f73687-1d01-68a3-5627-7caa1cd1975c"
+		},
+		{
+			"name": "User",
+			"description": "Any website should have user authentication and authorization, to be able to prevent and let the user access the website according the permessions.\n",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"order": [
+				"5595b847-9629-ca1a-a19a-e30cf596f0a0",
+				"45d8d8e5-b060-56c4-b1bd-4e4513ebd764",
+				"65ac406b-d50a-ddc0-4f17-86ac3834c1bd",
+				"d75522ff-9d34-8617-0edd-5f29b3c0c44f"
+			],
+			"owner": "6307338",
+			"folders_order": [],
+			"id": "1ba335b3-29e0-b98e-5ad0-6e427cf90adf"
+		},
+		{
+			"name": "attendees",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"order": [
+				"1dd5e5f3-29fd-2c3a-271e-9eb5e72b50dd",
+				"2fdf8143-21fe-b182-7105-c8c570b45346",
+				"245ee61f-de4d-ca2a-0eae-7070b7d5ee89",
+				"b5b4e760-3c4e-3670-af21-dc86057af931",
+				"eea5f8aa-617d-2790-c58f-ed99ddbc12bd",
+				"fb858ddf-f150-f9d2-a5a3-afb5992a7248"
+			],
+			"owner": "6307338",
+			"folders_order": [],
+			"id": "273e5d2c-8338-c182-c53d-323eeaab1f20"
+		},
+		{
+			"name": "contact",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"order": [
+				"98cd549e-5b11-eb7c-5ada-fff4e3f2cff6"
+			],
+			"owner": "6307338",
+			"folders_order": [],
+			"id": "358b991b-0a18-7ccf-87aa-e6144e17f211"
+		}
+	],
+	"folders_order": [
+		"1ba335b3-29e0-b98e-5ad0-6e427cf90adf",
+		"83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d",
+		"03f73687-1d01-68a3-5627-7caa1cd1975c",
+		"273e5d2c-8338-c182-c53d-323eeaab1f20",
+		"b954132e-0c40-6e7a-e333-07f62ebde406",
+		"358b991b-0a18-7ccf-87aa-e6144e17f211"
+	],
+	"timestamp": 1562586318052,
+	"owner": "6307338",
+	"public": false,
+	"requests": [
+		{
+			"id": "1a4ac95e-0079-5682-bac5-bf16378f04ec",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA",
+					"description": ""
+				}
+			],
+			"url": " http://localhost:3000/api/ask/admin/deleteAnswer/5dfb2489b2fdf01b55fd438a",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"data": null,
+			"dataMode": "params",
+			"name": "Delete an answer of a question (admin)",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1576741662247,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406"
+		},
+		{
+			"id": "1dd5e5f3-29fd-2c3a-271e-9eb5e72b50dd",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/attendees/attendEvent/5def676562c0fa7cd79c0270",
+			"folder": "273e5d2c-8338-c182-c53d-323eeaab1f20",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576820284464,
+			"name": "Attend a specific event",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "245ee61f-de4d-ca2a-0eae-7070b7d5ee89",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "  http://localhost:3000/api/attendees/getUserAttendees\n",
+			"folder": "273e5d2c-8338-c182-c53d-323eeaab1f20",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575978929033,
+			"name": "Get the user attendees",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "28bd946e-9def-7c58-2f2a-d4c479c5e178",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/ask/admin/deleteQuestion/5dfb494b07cfc63ad990cf94",
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576775260505,
+			"name": "Delete a question (admin)",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "2fdf8143-21fe-b182-7105-c8c570b45346",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/attendees/notAttend/5def676562c0fa7cd79c0270",
+			"folder": "273e5d2c-8338-c182-c53d-323eeaab1f20",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575980196541,
+			"name": "Not a attend a specific event",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "455d0611-3502-8577-f907-f7d3b94bb098",
+			"headers": "Content-Type: application/json\nx-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjQzMzY0OSwiZXhwIjoxNTc2NjA2NDQ5fQ.JwJqpoiz-CUD4sRkyghcs8OCFds4N09XC2wFqIUETJs\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjQzMzY0OSwiZXhwIjoxNTc2NjA2NDQ5fQ.JwJqpoiz-CUD4sRkyghcs8OCFds4N09XC2wFqIUETJs",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/event/update/5df63c9708e1bb50c28be406",
+			"folder": "83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576434176685,
+			"name": "Update an event",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": " {\n        \"name\": \"devent 6\",\n        \"date\": \"2019-01-01T00:00:00.000Z\",\n        \"feedbacks\": [],\n        \"sessions\": [\n            {\n                \"session_name\": \"devmix introduction\",\n                \"session_number\": 1,\n                \"date\": \"First day\",\n                \"time\": \"01:00\",\n                \"content_desc\": \"Hey everybody, I know you are waiting our event. In this session, we will discuss the means of cooperating, team purpose, achievements, and also the day timeline. So attention, please.\",\n                \"instructor_id\": \"AQm5gZzR6rwNYInAzT1GMYXlPEwx79fii1ZlAoGXR8Mf_8nCI0sMKZaEzDjNP0\"\n            },\n            {\n                \"session_name\": \"web technologies\",\n                \"session_number\": 1,\n                \"date\": \"First day\",\n                \"time\": \"02:00\",\n                \"content_desc\": \"many students in the time of studying have a big problem of finding the right way of learning and the best language to start. unfortunately, there is no right way or even wrong. But if you made an effort in your way to learn, you will stand at the safe side.\",\n                \"instructor_id\": \"AQm5gZzR6rwNYIRacYenAzT1GMYXlPEwx79fii1ZlAoGXR8Mf_8nCI0sMKZaEzDjN0\"\n            }\n        ],\n        \"location\": \"El hawar at Monsoura\",\n        \"twitter_link\": \"https://www.facebook.com/events/414500029360390/\",\n        \"facebook_link\": \"https://www.facebook.com/events/414500029360390/\",\n        \"users\": 0,\n        \"cover_photo\": {\n            \"url\": \"https://res.cloudinary.com/ezat-elzalouy/image/upload/v1576418099/devmix/r6yixyrand17dzkduida.png\",\n            \"public_id\": \"devmix/r6yixyrand17dzkduida\"\n        }\n    }",
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "45d8d8e5-b060-56c4-b1bd-4e4513ebd764",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/users/",
+			"folder": "1ba335b3-29e0-b98e-5ad0-6e427cf90adf",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575962573582,
+			"name": "Register to Devmix",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\":\"Ezat Elzalouy\",\n\t\"email\":\"ezatelzalouy@gmail.com\",\n\t\"password\":\"ezatelzalouy711\",\n\t\"gender\":\"male\"\n}",
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "5595b847-9629-ca1a-a19a-e30cf596f0a0",
+			"headers": "Content-Type: application/json\n//x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDIzNGMzOWZjNjhiNTM1ZGEzYjcwYWQiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2Mjg3NzI3M30.eOqGKCuS56SyxKI1LG3cUDS6nFogW0sMKr0Hc_0VkF8\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDIzNGMzOWZjNjhiNTM1ZGEzYjcwYWQiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2Mjg3NzI3M30.eOqGKCuS56SyxKI1LG3cUDS6nFogW0sMKr0Hc_0VkF8",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": " http://localhost:3000/api/auth/",
+			"folder": "1ba335b3-29e0-b98e-5ad0-6e427cf90adf",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575969101668,
+			"name": "Login to Devmix",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"ezatelzalouy711@gmail.com\",\n\t\"password\":\"0123456\"\n}",
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "65ac406b-d50a-ddc0-4f17-86ac3834c1bd",
+			"headers": "",
+			"headerData": [],
+			"url": " http://localhost:3000/api/users/search/Ezat",
+			"folder": "1ba335b3-29e0-b98e-5ad0-6e427cf90adf",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576818971404,
+			"name": "search by name",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "662a343d-3cfc-8f3a-2218-cf5641062f17",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/ask",
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576745272650,
+			"name": "Ask a question",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n\t\"question\":\"HI\",\n\t\"user_id\":\"5df74cf48ef42c02963fa849\"\n}"
+		},
+		{
+			"id": "663c4dde-d74d-3a65-369a-7674570ee611",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/ask/notAnswered",
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576747529774,
+			"name": "Get not answered questions (Admin)",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "67130b04-da1c-732b-43c1-a45b53775316",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDIzNGMzOWZjNjhiNTM1ZGEzYjcwYWQiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2Mjg3NzQ0NH0.1Onps3RE6WxDHEI0ml54EkEUn8kLFecjxK28Em822OE\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDIzNGMzOWZjNjhiNTM1ZGEzYjcwYWQiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2Mjg3NzQ0NH0.1Onps3RE6WxDHEI0ml54EkEUn8kLFecjxK28Em822OE",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/events/5d25087d5e9eef22d0dfbb36",
+			"folder": "83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": [],
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDIzNGMzOWZjNjhiNTM1ZGEzYjcwYWQiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2Mjg3NzQ0NH0.1Onps3RE6WxDHEI0ml54EkEUn8kLFecjxK28Em822OE",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1562877613617,
+			"name": "Delete event",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "67b48bd5-2fff-c072-1037-b4d2a3579643",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGY3NGNmNDhlZjQyYzAyOTYzZmE4NDkiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NjczOTkyOSwiZXhwIjoxNTc2OTEyNzI5fQ.8tKi0elbRKEgxgFxOKaALB4BbcRCe8QBW1ynTNgo9lA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/ask/admin/answering/5dfb389f022b482ad7a99e1c",
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576745275282,
+			"name": "Answer a question (Admin)",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n\t\"answer\":\"هاى ورحمة الله وبركاته ... اهلا بيك ف devmix\"\n}"
+		},
+		{
+			"id": "723c45a6-1bf2-c665-828b-8f961be7ee8c",
+			"headers": "Content-Type: application/json\nx-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDgzNzQ5ZDllYjAzOTAwMTcyZTljODYiLCJuYW1lIjoiRXphdCBFbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2ODg5ODA1OH0.OtWKi5SHduxgoMzzWU5xCOPfkMHnYnx5TV3ff4NqWTQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDgzNzQ5ZDllYjAzOTAwMTcyZTljODYiLCJuYW1lIjoiRXphdCBFbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU2ODg5ODA1OH0.OtWKi5SHduxgoMzzWU5xCOPfkMHnYnx5TV3ff4NqWTQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/events/sessions/5d8375199eb03900172e9c87",
+			"folder": "03f73687-1d01-68a3-5627-7caa1cd1975c",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575392041465,
+			"name": "Add sessions",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n        \"session_name\": \"Devmix Intro\",\n        \"instructor_id\": 1,\n        \"session_number\": 1,\n        \"content_desc\": \"this is an intro of devmix team\",\n        \"content_link\": \"link\"\n}",
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "75cc1c91-97de-0f43-23ef-1448c23f48f4",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk2NTQ2OCwiZXhwIjoxNTc2MTM4MjY4fQ.UPGBVxhjEP0BVs6VWkZgLjZQDCy6z7zE-XVqQGW870s\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk2NTQ2OCwiZXhwIjoxNTc2MTM4MjY4fQ.UPGBVxhjEP0BVs6VWkZgLjZQDCy6z7zE-XVqQGW870s",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/event/",
+			"folder": "83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575965826352,
+			"name": "Add new event",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\":\"devent 8\",\n\t\"cover_photo\":\"\",\n\t\"location\":\"ITI mansoura\",\n\t\"date\":\"12 20, 2019 10:00:00\",\n\t\"feedbacks\":[{\"user_id\":\"0123\",\"feedback\":\"goot event\"}],\n\t\"sessions\":[\n\t\t{\n\t\t\t\"session_name\":\"Devmix intro\",\n\t\t\t\"session_number\":\"1\",\n\t\t\t\"content_desc\":\"description\",\n\t\t\t\"content_link\":\"link\",\n\t\t\t\"instructor_id\":\"njhtgrf5r1,kmj20bfc\",\n\t\t\t\"date\":\"First Day\",\n\t\t\t\"time\":\"11:00:00\"\n\t\t},{\n\t\t\t\"session_name\":\"Web Technologies\",\n\t\t\t\"session_number\":\"2\",\n\t\t\t\"content_desc\":\"وزى ماتكلمنا عن ال web development ووضحنا اد ايه اثر على الواقع بال trends اللى ظهرت مجددا خلال السنين اللى فاتت. اكيد كان لازم نستمع لحد متخصص فى المجال. بالتالى هيكون معانا session خاصة بال web development واللى هيقدمها الباشمهندس احمد ضيف ❤ ودى نبذة بسيطة عنه Graduated from mansourah faculty of computer and informations - computer science department 2013  Advanced senior full stack developer at waqood tech. Since 8 years, I started working in the IT field as a programmer participating in around 70 projects and besides this, I tried many part-time professional crafts like writing, radio announcing and music, but the technology remains my passion. I was one of the founders and x-leader of 'devmix' team.\",\n\t\t\t\"instructor_id\":\"dghjklkjhgrftyuk,m5nfdc\",\n\t\t\t\"date\":\"First Day\",\n\t\t\t\"time\":\"12:00:00\"\n\n\t\t}\n\t\t]\n}",
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "7f3709b4-326d-f92a-3093-69f853d86e77",
+			"headers": "",
+			"headerData": [],
+			"url": " http://localhost:3000/api/event/sessions/5def676562c0fa7cd79c0270",
+			"folder": "03f73687-1d01-68a3-5627-7caa1cd1975c",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576819817649,
+			"name": "Get event sessions",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "89d11fe3-f39a-a637-e01e-3ba38763934a",
+			"headers": "",
+			"headerData": [],
+			"url": " http://localhost:3000/api/ask/0/100",
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576747533813,
+			"name": "Get answered questions (Any)",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "8fef66f3-e922-8f28-1511-5330bcedfec0",
+			"headers": "",
+			"headerData": [],
+			"url": "  http://localhost:3000/api/event",
+			"folder": "83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575977143701,
+			"name": "Get events",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "9257cae2-0c5a-43c5-a68d-9c76d0b78ee1",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk2NTQ2OCwiZXhwIjoxNTc2MTM4MjY4fQ.UPGBVxhjEP0BVs6VWkZgLjZQDCy6z7zE-XVqQGW870s\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk2NTQ2OCwiZXhwIjoxNTc2MTM4MjY4fQ.UPGBVxhjEP0BVs6VWkZgLjZQDCy6z7zE-XVqQGW870s",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/event/sessions/5def5478e44c14727c45c104/5def5478e44c14727c45c106",
+			"folder": "03f73687-1d01-68a3-5627-7caa1cd1975c",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575969100846,
+			"name": "Delete session",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "98cd549e-5b11-eb7c-5ada-fff4e3f2cff6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/contact/request",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Request",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1576823276137,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "358b991b-0a18-7ccf-87aa-e6144e17f211",
+			"rawModeData": "{\n\t\"name\":\"Ezat Elzalouy\",\n\t\"phone\":\"01064198879\",\n\t\"email\":\"ezatelzalouy711@gmail.com\",\n\t\"message\":\"Hi \"\n}"
+		},
+		{
+			"id": "b5b4e760-3c4e-3670-af21-dc86057af931",
+			"headers": "",
+			"headerData": [],
+			"url": "  http://localhost:3000/api/attendees/getEventAttendees/5def676562c0fa7cd79c0270",
+			"folder": "273e5d2c-8338-c182-c53d-323eeaab1f20",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575981287820,
+			"name": "Get the event attendees",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "b6152fe0-1c29-8bc0-5df7-9bce48100f34",
+			"headers": "",
+			"headerData": [],
+			"url": " http://localhost:3000/api/ask/count",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"data": null,
+			"dataMode": "params",
+			"name": "AsksCount",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1576767438854,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b954132e-0c40-6e7a-e333-07f62ebde406"
+		},
+		{
+			"id": "c3b429d3-f3b3-b1a9-84be-00e7289ca435",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk2NTQ2OCwiZXhwIjoxNTc2MTM4MjY4fQ.UPGBVxhjEP0BVs6VWkZgLjZQDCy6z7zE-XVqQGW870s\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk2NTQ2OCwiZXhwIjoxNTc2MTM4MjY4fQ.UPGBVxhjEP0BVs6VWkZgLjZQDCy6z7zE-XVqQGW870s",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": " http://localhost:3000/api/event/image",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "id",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "image",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576819252087,
+			"name": "Upload Event Image",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "d75522ff-9d34-8617-0edd-5f29b3c0c44f",
+			"headers": "",
+			"headerData": [],
+			"url": " http://localhost:3000/api/users/byid/5df74cf48ef42c02963fa849",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"data": null,
+			"dataMode": "params",
+			"name": "Search on user by id",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1576819004245,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "1ba335b3-29e0-b98e-5ad0-6e427cf90adf"
+		},
+		{
+			"id": "eea5f8aa-617d-2790-c58f-ed99ddbc12bd",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "  http://localhost:3000/api/attendees/getUserAttendee/5def676562c0fa7cd79c0270",
+			"folder": "273e5d2c-8338-c182-c53d-323eeaab1f20",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575978927556,
+			"name": "get user attendee",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"collection_id": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632"
+		},
+		{
+			"id": "f12b4b41-2ca6-9a2b-9b1f-43eb16c2285b",
+			"headers": "",
+			"headerData": [],
+			"url": " http://localhost:3000/api/event/get/5def676562c0fa7cd79c0270",
+			"folder": "83a7fb04-3f2e-e3f8-0ec6-f8a461ca627d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576819057309,
+			"name": "Get a specific event",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": []
+		},
+		{
+			"id": "fb858ddf-f150-f9d2-a5a3-afb5992a7248",
+			"headers": "x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "x-auth-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGVhODYxYTUxZTdiNDUzOTgwZjRlNTEiLCJuYW1lIjoiZXphdCBlbHphbG91eSIsImVtYWlsIjoiZXphdGVsemFsb3V5NzExQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU3NTk3NzA1MiwiZXhwIjoxNTc2MTQ5ODUyfQ.AQJ53_4qYezmGpetDFJ6-6uq21N4SLBtUxAAN_ABnrc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/attendees/confirm",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576820283250,
+			"name": "Confirm Attendee",
+			"description": "",
+			"collectionId": "84aca7fb-61c9-6ab2-82d9-b9553d7f9632",
+			"responses": [],
+			"rawModeData": "{\n\t\"user\":\"5def676562c0fa7cd79c0270\",\n\t\"event\":\"defr56j8k1l8ut7ffggbs5e\"\n}"
+		}
+	]
+}

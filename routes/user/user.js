@@ -61,7 +61,7 @@ router.get(
       gender: user.gender,
       short_desc: user.short_desc ? user.short_desc : "",
       long_desc: user.long_desc ? user.long_desc : "",
-      profile_photo: user.profile_photo.url ? user.profile_photo : "",
+      profile_photo: user.profile_photo ? user.profile_photo.url : "",
       linknedIn: user.linknedIn ? user.linknedIn : "",
       twitter: user.twitter ? user.twitter : "",
       github: user.github ? user.github : "",
