@@ -1,7 +1,8 @@
 {
     "jwt_PK": "jwt_PK",
     "connectionString": "connectionString",
-    "googleplus-clientId": "googleplus_clientId",
-    "googleplus-clientSecret": "googleplus_clientSecret",
-    "CLOUDINARY_URL": "CLOUDINARY_URL"
+    "CLOUDINARY_URL": "CLOUDINARY_URL",
+    "Mail_UserName": "Mail_UserName",
+    "Mail_Password": "Mail_Password",
+    "FrontEndUrl": "FrontEndUrl"
 }

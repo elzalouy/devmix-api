@@ -9,11 +9,12 @@ const AskSchema = mongoose.model(
     date: { type: Date },
     user_id: { type: mongoose.Types.ObjectId },
     admin_id: { type: mongoose.Types.ObjectId },
-    username: String,
-    user_photo: String,
-    adminname: String
+    username: { type: String },
+    adminname: { type: String },
+    user_photo: { type: Object }
   })
 );
+
 function validateAskSchema(ask) {
   const Schema = {
     question: Joi.string()
@@ -25,10 +26,7 @@ function validateAskSchema(ask) {
       .allow(null),
     date: Joi.date(),
     user_id: Joi.string().allow(null),
-    admin_id: Joi.string().allow(null),
-    username: Joi.string().allow(null),
-    user_id: Joi.string().allow(null),
-    adminname: Joi.string().allow(null)
+    admin_id: Joi.string().allow(null)
   };
   return Joi.validate(ask, Schema);
 }

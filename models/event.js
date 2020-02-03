@@ -4,8 +4,8 @@ const sessionSchema = new mongoose.Schema({
   session_name: {
     type: String,
     required: true,
-    min: 3,
-    max: 128,
+    minlength: 3,
+    maxlength: 128,
     lowercase: true
   },
   session_number: { type: Number, required: true },
@@ -16,8 +16,8 @@ const sessionSchema = new mongoose.Schema({
   instructor_id: { type: String, required: true }
 });
 const feedback = {
-  user_id: { type: String, required: true },
-  feedback: { type: String, required: true }
+  user_id: { type: mongoose.Types.ObjectId },
+  feedback: { type: String, required: true, minlength: 3, maxlength: 2048 }
 };
 const event = mongoose.model(
   "event",
@@ -38,9 +38,7 @@ const event = mongoose.model(
       type: Date,
       required: true
     },
-    feedbacks: {
-      type: [feedback]
-    },
+    feedbacks: { type: [feedback], minlength: 0, required: false },
     sessions: {
       type: [sessionSchema],
       required: true,
@@ -78,7 +76,6 @@ function validateEvent(event) {
   };
   return Joi.validate(event, eventJoiSchema);
 }
-
 function validateSessions(session) {
   const sessionJoiSchema = {
     _id: Joi.object(),
@@ -100,7 +97,17 @@ function validateSessions(session) {
   };
   return Joi.validate(session, sessionJoiSchema);
 }
-
+function validateFeedback(data) {
+  const schema = {
+    user_id: Joi.string(),
+    feedback: Joi.string()
+      .required()
+      .min(3)
+      .max(2048)
+  };
+  return Joi.validate(data, schema);
+}
 module.exports.validateEvent = validateEvent;
 module.exports.validateSessions = validateSessions;
 module.exports.event = event;
+module.exports.validateFeedback = validateFeedback;

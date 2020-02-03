@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 const handle = require("../../middleware/handle");
 const auth = require("../../middleware/auth");
 const admin = require("../../middleware/admin");
@@ -9,6 +8,18 @@ const { event } = require("../../models/event");
 const { User } = require("../../models/user");
 const { Attendees } = require("../../models/attendees");
 const _ = require("lodash");
+
+//get all event attendees
+router.get(
+  "/AttendeesList",
+  [auth, admin],
+  handle(async (req, res) => {
+    let attendees = await Attendees.find();
+    if (!attendees)
+      return res.status(400).send("there are no attendees not confirmed");
+    res.status(200).send(attendees);
+  })
+);
 
 // get event attendees
 router.get(
@@ -26,7 +37,7 @@ router.get(
     let users = { users: [] };
     for (i = 0; i < attendees.length; i++) {
       let user = await User.findById(attendees[i].user).select(
-        "name , profile_photo, short_desc"
+        "name , profile_photo, email"
       );
       users["users"].push(user);
     }
@@ -34,60 +45,71 @@ router.get(
   })
 );
 
+// get user attendee
 router.get(
-  "/getUserAttendee/:event_id",
+  "/getUserAttendee/:event_id/:user_id",
   validateObjectId,
-  auth,
   handle(async (req, res) => {
     const attendee = await Attendees.findOne({
       event: req.params.event_id,
-      user: req.user._id
+      user: req.params.user_id
     });
     res.status(200).send(attendee);
   })
 );
+
 // user's events to attend
 router.get(
-  "/getUserAttendees",
-  auth,
+  "/getUserAttendees/:user_id",
+  validateObjectId,
   handle(async (req, res) => {
-    const attendees = await Attendees.find({
-      user: req.user._id,
-      confirm: false
+    attendees = await Attendees.find({
+      user: req.params.user_id
     });
     let userEvents = { events: [] };
     for (i = 0; i < attendees.length; i++) {
       let Event = await event
         .findById(attendees[i].event)
-        .select("name , cover_photo");
+        .select("name , cover_photo , date , location");
+      Event = Event.set({ confirmed: attendees[i].confirmed });
       userEvents["events"].push(Event);
     }
     res.send(userEvents);
   })
 );
 
-//promise to attent an event
+//promise to attend an event
 router.get(
   "/attendEvent/:id",
   validateObjectId,
   auth,
   handle(async (req, res) => {
-    let Event = await event.findById(req.params.id);
-    if (!Event)
-      return res.status(400).send("the event with the given id was not found");
     let attendee = await Attendees.findOne({
       user: req.user._id,
       event: req.params.id
     });
     if (attendee) return res.status(200).send("the attendee aleardy existed");
+    let Event = await event.findById(req.params.id);
+    if (!Event)
+      return res.status(400).send("the event with the given id was not found");
+    let count = Event.users;
+    Event = await event.findByIdAndUpdate(
+      req.params.id,
+      { users: count + 1 },
+      { new: true }
+    );
+    let user = await User.findById(req.user._id);
+    if (!user) return res.status(400).send("unauthorized user");
     let newattendee = new Attendees({
       user: req.user._id,
+      username: user.name,
       event: req.params.id,
+      name: Event.name,
+      profile_photo: user.profile_photo,
       confirm: false
     });
     newattendee = await newattendee.save();
-    Event = _.pick(Event, ["name", "cover_photo"]);
-    res.status(200).send(Event);
+    res.status(200).send(newattendee);
   })
 );
 
@@ -101,6 +123,10 @@ router.get(
       user: req.user._id,
       event: req.params.id
     });
+    let count = await Attendees.find({ event: req.params.id }).count();
+    let Event = await event.findByIdAndUpdate(req.params.id, { users: count });
+    if (!Event)
+      return res.status(400).send("the event with the given id was not found");
     res.status(200).send(attendee);
   })
 );
@@ -122,6 +148,19 @@ router.post(
     attendee.confirm = true;
     await attendee.save();
     return res.send(attendee);
+  })
+);
+
+router.post(
+  "/delete",
+  [auth, admin],
+  handle(async (req, res) => {
+    let ids = req.body.ids;
+    for (let i = 0; i < ids.length; i++) {
+      let result = await Attendees.findByIdAndDelete(ids[i]);
+      if (!result) return res.status(400).send("not found");
+    }
+    res.send("done");
   })
 );
 //get confirmed attendees

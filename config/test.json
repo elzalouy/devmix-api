@@ -1,5 +1,6 @@
 {
-    "jwt_PK":"1234",
-    "connectionString":"mongodb://localhost:27017/devmix_test",
-    "callbackURL":"http://localhost:3000/api/auth/google/redirect"
+    "name": "devmix test",
+    "jwt_PK": "1234",
+    "connectionString": "mongodb://localhost:27017/devmix_test",
+    "callbackURL": "http://localhost:3000/api/auth/google/redirect"
 }

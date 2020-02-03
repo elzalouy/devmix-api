@@ -4,8 +4,10 @@ const Router = express.Router();
 const {
   event,
   validateEvent,
-  validateSessions
+  validateSessions,
+  validateFeedback
 } = require("../../models/event");
+const { verifyToken } = require("../../models/user");
 const auth = require("../../middleware/auth");
 const admin = require("../../middleware/admin");
 const handle = require("../../middleware/handle");
@@ -17,6 +19,7 @@ const {
   deleteImage,
   deletePublic
 } = require("../../services/cloudinary");
+
 //Get the events
 Router.get(
   "/",
@@ -53,7 +56,7 @@ Router.post(
       return res
         .status(400)
         .send(
-          "There are an event with the same name. Please choose another name."
+          "There are an event with the same name. Please choose another name..."
         );
     const { error } = validateEvent(req.body);
     if (error) return res.status(400).send(error.details[0].message);
@@ -114,7 +117,6 @@ Router.put(
     const sessions = _.map(req.body.sessions, element => {
       return _.omit(element, "_id");
     });
-    //validate
     const data = {
       name: req.body.name,
       date: req.body.date,
@@ -144,6 +146,7 @@ Router.put(
     res.send(updateEvent);
   })
 );
+
 //delete event
 Router.delete(
   "/:id",
@@ -158,5 +161,49 @@ Router.delete(
     res.send(result);
   })
 );
+Router.post(
+  "/feedback",
+  handle(async (req, res) => {
+    let decoded = null;
+    if (req.header("x-auth-token"))
+      decoded = verifyToken(req.header("x-auth-token"));
+    const feedback = {
+      user_id: decoded ? decoded._id : null,
+      feedback: req.body.feedback
+    };
+    let { error } = validateFeedback(feedback);
+    if (error) return res.status(400).send(error.details[0].message);
+    const id = req.body.event;
+    let Event = await event.findByIdAndUpdate(
+      id,
+      {
+        $push: { feedbacks: feedback }
+      },
+      { new: true }
+    );
+    if (!Event)
+      return res.status(400).send("the event with the given id was not found");
+    res.status(200).send(Event.feedbacks);
+  })
+);
 
+Router.delete(
+  "/feedback/:event/:id",
+  [auth, admin],
+  handle(async (req, res) => {
+    let id = req.params.event;
+    let feedback = req.params.id;
+    let Event = await event.findByIdAndUpdate(
+      id,
+      {
+        $pull: { feedbacks: { _id: feedback } }
+      },
+      { new: true }
+    );
+    await Event.save();
+    if (!Event)
+      return res.status(400).send("The event with the given id was not found");
+    res.status(200).send(Event);
+  })
+);
 module.exports = Router;

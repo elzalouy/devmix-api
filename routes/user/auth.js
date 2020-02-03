@@ -13,12 +13,18 @@ router.post(
     if (error) res.status(400).send(error.details[0].message);
     let user = await User.findOne({ email: req.body.email });
     if (!user) res.status(400).send("Invalid email or password");
+    if (!user.confirmed)
+      res
+        .status(400)
+        .send(
+          "Email not confirmed, go to your email and click the link to confirm."
+        );
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
     if (validPassword === false)
-      res.status(400).send("Invalid email or password");
+      return res.status(400).send("Invalid email or password");
     const token = user.generateAuthToken();
     res.status(200).send({ token: token });
   })

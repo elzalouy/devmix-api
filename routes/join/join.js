@@ -4,6 +4,7 @@ const handle = require("../../middleware/handle");
 const auth = require("../../middleware/auth");
 const admin = require("../../middleware/admin");
 const { JoinReuest, validateJoinRequet } = require("../../models/joinRequests");
+
 Router.get(
   "/list",
   [auth, admin],
@@ -13,6 +14,7 @@ Router.get(
     res.send(Requests);
   })
 );
+
 Router.post(
   "/request",
   handle(async (req, res) => {
@@ -38,14 +40,12 @@ Router.post(
 );
 
 Router.delete(
-  "/delete",
+  "/delete/:id",
   [auth, admin],
   handle(async (req, res) => {
-    req.body.ids.forEach(async element => {
-      const result = await JoinReuest.findByIdAndRemove(element);
-      if (!result)
-        res.status(400).send("the event with the given id was not found");
-    });
+    const result = await JoinReuest.findByIdAndDelete(req.params.id);
+    if (!result)
+      res.status(400).send("the request with the given id was not found");
     res.status(200).send("done");
   })
 );

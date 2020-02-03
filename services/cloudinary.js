@@ -2,6 +2,7 @@ const _ = require("lodash");
 const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
 const Path = require("path");
+
 function deletePublic() {
   const directory = Path.join(__dirname, "../public/assets");
   fs.readdir(directory, (err, files) => {
@@ -13,17 +14,21 @@ function deletePublic() {
     }
   });
 }
+
 async function uploadImage(path) {
   const result = await cloudinary.uploader.upload(path, { folder: "devmix" });
   if (result) return { url: result.secure_url, public_id: result.public_id };
   return null;
 }
+
 function getImage(path) {
   cloudinary.image(path);
 }
+
 async function deleteImage(path) {
   const result = await cloudinary.uploader.destroy(path);
 }
+
 module.exports = {
   uploadImage: uploadImage,
   getImage: getImage,
