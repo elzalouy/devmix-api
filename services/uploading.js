@@ -1,7 +1,7 @@
 const multer = require("multer");
 const uuid4 = require("uuid/v4");
-let DIR = __dirname.slice("/services");
-DIR = DIR + "/public/assets";
+let DIR = __dirname.split("/services");
+DIR = DIR[0] + "/public/assets";
 module.exports = function() {
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
