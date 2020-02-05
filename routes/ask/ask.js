@@ -63,21 +63,22 @@ router.get(
 router.post(
   "/",
   handle(async (req, res) => {
+    console.log(req.body);
     let user = null;
-    if (req.body.user_id)
-      user = await User.findById(req.body.user_id).select("name profile_photo");
+    if (req.body.user_id) user = await User.findById(req.body.user_id);
     const ask = new Ask({
       question: req.body.question,
       user_id: req.body.user_id ? req.body.user_id : null,
       date: Date.now(),
       admin_id: null,
       answer: null,
-      username: req.body.user_id && user ? user.name : null,
-      profile_photo: req.body.user_id && user ? user.profile_photo : null
+      username: user ? user.name : null,
+      user_photo: user ? user.profile_photo : null
     });
     const { error } = validateAskSchema(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     const result = await ask.save();
+    console.log(result);
     res.status(200).send(result);
   })
 );

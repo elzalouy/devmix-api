@@ -86,6 +86,7 @@ const User = mongoose.model("user", userSchema);
 function verifyToken(token) {
   return jwt.verify(token, config.get("jwt_PK"));
 }
+
 function validateUpdate(user) {
   const schema = {
     short_desc: Joi.string()
@@ -109,6 +110,24 @@ function validateUpdate(user) {
     job: Joi.string().allow(null, "")
   };
   return Joi.validate(user, schema);
+}
+
+function validateRegister(newUser) {
+  const schema = {
+    name: Joi.string()
+      .min(5)
+      .max(50)
+      .required(),
+    email: Joi.string()
+      .max(255)
+      .required(),
+    password: Joi.string()
+      .min(5)
+      .max(255)
+      .required(),
+    gender: Joi.string().required()
+  };
+  return Joi.validate(newUser, schema);
 }
 
 function validateUser(user) {
@@ -201,5 +220,6 @@ module.exports = {
   validateUpdate,
   validateChangePassword,
   validateForgotPassword,
-  verifyToken
+  verifyToken,
+  validateRegister
 };

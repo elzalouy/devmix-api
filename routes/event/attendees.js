@@ -64,7 +64,8 @@ router.get(
   validateObjectId,
   handle(async (req, res) => {
     attendees = await Attendees.find({
-      user: req.params.user_id
+      user: req.params.user_id,
+      confirm: true
     });
     let userEvents = { events: [] };
     for (i = 0; i < attendees.length; i++) {

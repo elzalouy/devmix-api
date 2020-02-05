@@ -16,8 +16,8 @@ const sessionSchema = new mongoose.Schema({
   instructor_id: { type: String, required: true }
 });
 const feedback = {
-  user_id: { type: mongoose.Types.ObjectId },
-  feedback: { type: String, required: true, minlength: 3, maxlength: 2048 }
+  user_id: { type: String },
+  feedback: { type: String, required: true, minlength: 3, maxlength: 100 }
 };
 const event = mongoose.model(
   "event",
@@ -99,11 +99,11 @@ function validateSessions(session) {
 }
 function validateFeedback(data) {
   const schema = {
-    user_id: Joi.string(),
+    user_id: Joi.string().allow(null),
     feedback: Joi.string()
       .required()
       .min(3)
-      .max(2048)
+      .max(100)
   };
   return Joi.validate(data, schema);
 }

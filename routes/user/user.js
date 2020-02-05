@@ -4,7 +4,8 @@ const {
   validateUpdate,
   validateChangePassword,
   validateForgotPassword,
-  verifyToken
+  verifyToken,
+  validateRegister
 } = require("../../models/user");
 const bcrypt = require("bcrypt");
 const express = require("express");
@@ -26,7 +27,7 @@ const Random = require("../../services/random");
 router.post(
   "/",
   handle(async (req, res) => {
-    const { error } = validateUser(req.body);
+    const { error } = validateRegister(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     let user = await User.findOne({ email: req.body.email });
     if (user)
