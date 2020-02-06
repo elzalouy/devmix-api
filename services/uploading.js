@@ -15,6 +15,7 @@ module.exports = function() {
       cb(null, uuid4() + "-" + Date.now() + "-" + fileName);
     }
   });
+
   const upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
