@@ -21,6 +21,11 @@ const server = app.listen(port, () => {
   try {
     console.log(`listening to port ${port}....`);
     console.log(config.get("name"));
+    try {
+      fs.mkdirSync(path.join(__dirname, "/public/asstes/"));
+    } catch (err) {
+      if (err.code !== "EEXIST") throw err;
+    }
   } catch (ex) {
     console.log(ex.message);
     winston.error(ex.message, ex);
