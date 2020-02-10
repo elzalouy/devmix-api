@@ -18,11 +18,7 @@ const auth = require("../../middleware/auth");
 const admin = require("../../middleware/admin");
 const config = require("config");
 const upload = require("../../services/uploading")();
-const {
-  uploadImage,
-  deleteImage,
-  deletePublic
-} = require("../../services/cloudinary");
+const { uploadImage, deleteImage } = require("../../services/cloudinary");
 const Random = require("../../services/random");
 router.post(
   "/",
@@ -94,13 +90,12 @@ router.post(
     if (user && user.profile_photo) deleteImage(user.profile_photo.public_id);
     if (!user)
       return res.status(400).send("Error occureed while saving the photo.");
-    const path = "./" + req.file.path;
+    const path = req.file.path;
     const result = await uploadImage(path);
     if (result) {
       user.profile_photo = result;
       await user.save();
     }
-    deletePublic();
     res.send("done");
   })
 );
