@@ -4,7 +4,7 @@ const fs = require("fs");
 const Path = require("path");
 
 function deletePublic() {
-  const directory = Path.join(__dirname, "../public/assets");
+  const directory = Path.join(__dirname, "../public");
   fs.readdir(directory, (err, files) => {
     if (err) throw err;
     for (const file of files) {

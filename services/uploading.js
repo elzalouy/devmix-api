@@ -5,7 +5,7 @@ let dir = __dirname.split("/services");
 module.exports = function() {
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, path.join(dir[0], "/public/assets"));
+      cb(null, path.join(dir[0], "/public"));
     },
     filename: (req, file, cb) => {
       const fileName = file.originalname
