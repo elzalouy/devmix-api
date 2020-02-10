@@ -1,6 +1,5 @@
 const {
   User,
-  validateUser,
   validateUpdate,
   validateChangePassword,
   validateForgotPassword,

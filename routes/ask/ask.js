@@ -63,7 +63,6 @@ router.get(
 router.post(
   "/",
   handle(async (req, res) => {
-    console.log(req.body);
     let user = null;
     if (req.body.user_id) user = await User.findById(req.body.user_id);
     const ask = new Ask({
@@ -78,7 +77,6 @@ router.post(
     const { error } = validateAskSchema(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     const result = await ask.save();
-    console.log(result);
     res.status(200).send(result);
   })
 );

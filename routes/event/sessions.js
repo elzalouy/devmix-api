@@ -44,7 +44,6 @@ Router.delete(
   [auth, admin],
   validatObjeectId,
   handle(async (req, res) => {
-    console.log(req.params.session_id);
     const Event = await event.findById(req.params.id);
     let sessions = _.filter(
       Event.sessions,

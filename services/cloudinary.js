@@ -4,7 +4,7 @@ const fs = require("fs");
 const Path = require("path");
 
 function deletePublic() {
-  let dir = __dirname.split("/services");
+  let dir = __dirname.split("services");
   const directory = Path.join(dir[0], "public");
   fs.readdir(directory, (err, files) => {
     if (err) throw err;

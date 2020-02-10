@@ -19,7 +19,6 @@ require("./startup/routes")(app);
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   try {
-    console.log(`listening to port ${port}....`);
     console.log(config.get("name"));
   } catch (ex) {
     console.log(ex.message);
