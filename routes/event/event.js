@@ -97,7 +97,7 @@ Router.post(
     if (Event && Event.cover_photo) deleteImage(Event.cover_photo.public_id);
     if (!Event)
       return res.status(400).send("there are error while saving the event...");
-    const path = "./" + req.file.path;
+    const path = req.file.path;
     const result = await uploadImage(path);
     if (result) {
       Event.cover_photo = result;
