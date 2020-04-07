@@ -9,16 +9,23 @@ const Ask = require("../routes/ask/ask");
 const Mail = require("../routes/mail/mail");
 const config = require("config");
 
-module.exports = function(app) {
-  app.use(function(req, res, next) {
-let allowedOrigins = ["http://"+config.get("FrontEndUrl"), "https://"+config.get("FrontEndUrl") ]
-let origin = req.headers.origin;
-if (allowedOrigins.includes(origin)) {
-    res.header("Access-Control-Allow-Origin", origin);
-}
+module.exports = function (app) {
+  app.use(function (req, res, next) {
+    let allowedOrigins = [
+      "http://" + config.get("FrontEndUrl"),
+      "https://" + config.get("FrontEndUrl"),
+    ];
+    let origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+      res.header("Access-Control-Allow-Origin", origin);
+    }
     res.header(
       "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
+      "Origin, X-Requested-With, Content-Type, Accept, Key, x-auth-token, multipart/form-data"
+    );
+    res.header(
+      "Access-Control-Allow-Methods",
+      "PUT, POST, GET, DELETE, OPTIONS"
     );
     next();
   });
