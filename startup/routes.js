@@ -11,7 +11,11 @@ const config = require("config");
 
 module.exports = function(app) {
   app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", config.get("FrontEndUrl"));
+let allowedOrigins = ["http://"+config.get("FrontEndUrl"), "https://"+config.get("FrontEndUrl") ]
+let origin = req.headers.origin;
+if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+}
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"

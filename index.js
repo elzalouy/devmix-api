@@ -20,6 +20,7 @@ const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   try {
     console.log(config.get("name"));
+    console.log(`listenin to port ${port}`);
   } catch (ex) {
     console.log(ex.message);
     winston.error(ex.message, ex);
