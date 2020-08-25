@@ -15,7 +15,6 @@ require("./startup/prod")(app);
 require("./startup/db")();
 require("./startup/routes")(app);
 const FrontApp = config.get("FrontEndUrl");
-app.use(cors({ origin: FrontApp }));
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   try {
