@@ -5,6 +5,8 @@ const morgan = require("morgan");
 const config = require("config");
 const passport = require("passport");
 const app = express();
+const FrontApp = config.get("FrontEndUrl");
+app.use(cors({ origin: FrontApp }));
 app.use(passport.initialize());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,7 +16,6 @@ require("./startup/logging")();
 require("./startup/prod")(app);
 require("./startup/db")();
 require("./startup/routes")(app);
-const FrontApp = config.get("FrontEndUrl");
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   try {
