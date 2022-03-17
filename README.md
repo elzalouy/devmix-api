@@ -1,11 +1,10 @@
 # Devmix
 
 
-[![build Status](https://scontent.fcai1-2.fna.fbcdn.net/v/t1.0-9/21768353_1588748554518253_7857270476047284440_n.png?_nc_cat=110&_nc_eui2=AeFlYsmL8VQgoqvJ_mNsA5UlLyJ9pMmt8xdfYnnTUhW8otKDoAoKEXX-bjxIK67ZlxPfW1vrlMMipC-uC8FbNEuvGF0KB6GtlNPnJ4J2duCOvg&_nc_oc=AQldOgCLpoCR1LDU_q6UZn72tkJarP3azPXtetQumTRoXP4UhiBCFDz8rMgOiUDmdMg&_nc_ht=scontent.fcai1-2.fna&oh=4ca47705a01c1e313607f90ac7d3ec2a&oe=5DB6A9C3)](https://www.facebook.com/DevmixOfficialPage/)
+![build Status](https://github.com/elzalouy/devmix-api/blob/master/Devmix%20API.gif)
 
-[![build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://www.linkedin.com/in/ezat-elzalouy-844bb0133/)
 
-[Devmix] is an application programming interface which will help the other front-end developers or even the mobile developer to create an application that will make people able to learn or even ask anyone about anything needs to know in software development.
+[devmix] is an application programming interface which will help the other front-end developers or even the mobile developer to create an application that will make people able to learn or even ask anyone about anything needs to know in software development.
 
   - All the events which roganized by devmix
   - Devmix members can be admins on the website.
